@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"/>
+    <title>Checkout Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+
+<body style="background-color:#f8f9fa">
+<!--<form action="#" th:action="@{/pago}" th:object="${preferenceId}" method="post">-->
+<div class="shopping-cart"></div>
+<font color="navy" style="font-family:times;">
+    <h1>Carrito de compra</h1>
+    <style> h1 {text-align:center;}</style>
+    <div style="margin: 20px">
+        <img src="http://medias.musimundo.com/medias/00313073-140606-140606-01-140606-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3MDUyM3xpbWFnZS9qcGVnfGhjOS9oNDcvMTAyNzIzMzc4ODcyNjIvMDAzMTMwNzMtMTQwNjA2LTE0MDYwNl8wMS0xNDA2MDZfMDEuanBnX3NpemU1MTV8ODcwMDllMjFkMjZiMDZlZGYwNzU0Y2FhMGYzZGQxMmMzMDI4MTdhOWE5ZDMyM2VjMDk3MjA2YjEyMzFhY2U4NQ"
+             width="350" height="300">
+
+        <div align="left"></div>
+        <div style="margin: 20px">
+            <p class="text-justify"></p>
+            <h2> Producto</h2>
+            <div>
+                <p><b>Descripcion:</b>
+                </p>
+                <div th:text="${description}"></div>
+                <p><b>Id Categoria:</b> <span th:text="${category}"></span><br>
+                    <b>Precio:</b> $ <span th:text="${unitPrice}" id="unit-price"> </span>
+                <div>
+                    <label for="quantity"><h5>Cantidad</h5></label>
+                    <input type="number" id="quantity" value="1">
+                </div>
+                <div style="position: fixed; margin: -500px; right: 600px">
+                    <div class="summary">
+                        <p class="item-name">Televisor Samsung x <span id="summary-quantity"></span></p>
+                        <p class="price"> Precio Unitario<span id="summary-price"></span><br>
+                        <p class="totalPrice"> Precio Total <span id="summary-total"></span><br>
+                        <h2>Resumen de compra</h2>
+                        <br>
+                        <div class="cho-container"><span class="text"><h4> Subtotal</h4></span><span class="price" id="cart-total"></span><br><br>
+                            <a class="btn btn-primary btn-lg btn-block" href="http://localhost:8080/cardForm">Pagar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</font>
+<script type="text/javascript" src="pref.js" defer></script>
+</body>
+<footer>
+    <img id="horizontal_logo"
+         src="https://d2az8otjr0j19j.cloudfront.net/templates/092/381/twig/static/images/logo-mercadopago.png?904813644"
+         text-align="right" width="400" height="100" style="position: fixed; margin: -100px; right: 150px; bottom: 90px;">
+    <div style="position: fixed; margin: 30px; left: 10px; bottom:-40px">
+        <p> Sitio para developers</p>
+        <p><a href="https://developers.mercadopago.com">https://developers.mercadopago.com </a>
+    </div>
+</footer>
+</html>

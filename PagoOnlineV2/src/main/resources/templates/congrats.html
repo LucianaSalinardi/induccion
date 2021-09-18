@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"/>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Congrats</title>
+</head>
+<body style="background-color:#f8f9fa">
+
+<div class="container" style="width:100%; display:flex;flex-wrap:wrap; margin:0px;margin-left:-50px; margin-right:0px;">
+  <div class=" bg-success p-2 text-white" style="background:green;height:100px;width:300%;flex: 0 0 300%;"></div>
+  <div class=" bg-success p-2 text-white" style="background:green;height:100px;width:300%;flex: 0 0 300%;">
+    <div  style="left:50%; position:absolute; transform: translate(-50%, -50%);"><h1> ¡Listo! Se acreditó tu pago </h1></div>
+  <div class=" bg-success p-2 text-white" style="background:green;height:100px;width:300%;flex: 0 0 300%;"></div>
+  <div class=" bg-success p-2 text-white" style="background:green;height:100px;width:300%;flex: 0 0 300%;"></div>
+</div>
+  <div class="description" style="left:50%; position:absolute; transform: translate(-50%, -50%);text-align:justify;margin-left:0px; margin-top:400px">
+  <h4 style="color:green; margin-left:0px" >Estado Aprobado ✓ </h4><br>
+  <h3><b><style text-align="center"></style> Pagaste $ <span th:text="${totalPrice}"></span></b></h3>
+  <h4>Compraste: <span th:text="${description}"></span></h4><br>
+</div>
+</div>
+</body>
+<footer>
+  <img id="horizontal_logo"
+       src="https://d2az8otjr0j19j.cloudfront.net/templates/092/381/twig/static/images/logo-mercadopago.png?904813644"
+       text-align="right" width="400" height="100" style="position: fixed; margin: -100px; right: 150px; bottom: 90px;">
+  <div style="position: fixed; margin: 30px; left: -10px; bottom:-40px">
+    <p> Sitio para developers</p>
+    <p><a href="https://developers.mercadopago.com">https://developers.mercadopago.com </a>
+  </div>
+</footer>
+</html>
