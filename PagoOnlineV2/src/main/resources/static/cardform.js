@@ -1,7 +1,7 @@
 
-const mp = new MercadoPago('APP_USR-eced6939-a636-4f2f-93a6-07a765c9652c');
+const mp = new MercadoPago('TEST-547c5f10-1c3d-4472-bdae-8be6ff9fc3a7');
 const cardForm = mp.cardForm({
-  amount: "100.5",
+  amount: "75000",
   autoMount: true,
   form: {
     id: "form-checkout",
@@ -44,7 +44,7 @@ const cardForm = mp.cardForm({
     issuer: {
       id: "form-checkout__issuer",
       placeholder: "Banco emisor",
-    },
+    }
   },
   callbacks: {
     onFormMounted: error => {
@@ -53,7 +53,6 @@ const cardForm = mp.cardForm({
     },
     onSubmit: event => {
       event.preventDefault();
-
       const {
         paymentMethodId: payment_method_id,
         issuerId: issuer_id,
@@ -85,6 +84,16 @@ const cardForm = mp.cardForm({
             },
           },
         }),
+      })
+
+      .then((response)=>{
+      if(response.status === 201){
+      response.json();
+
+      }
+      }).then((json)=>{
+      console.log(json);
+      window.location.href = "http://localhost:8080/success";
       });
     },
     onFetching: (resource) => {
@@ -100,3 +109,4 @@ const cardForm = mp.cardForm({
     },
   },
 });
+

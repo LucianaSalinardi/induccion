@@ -2,25 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no, shrink-to-fit=no"/>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script type="text/javascript" src="cardform.js" defer></script>
+
+
     <title>Card Form</title>
 </head>
 <body style="background-color:#f8f9fa">
 <font color="navy" style="font-family:times;">
     <h1>Formulario de tarjeta</h1><br><br>
     <style> h1 {text-align:center;}</style>
-    <form>
-<!--style="margin:0 auto; width: 250px" id="form-checkout">&ndash;&gt;-->
+    <form id="form-checkout">
 
-<!--        <div class="form-group row">-->
-<!--            <label class="col-sm-2 col-form-label">Numero de Tarjeta</label>-->
-<!--            <div class="col-sm-10">-->
-<!--                <input type="text" name="cardNumber" placeholder="Número de la tarjeta" id="form-checkout__cardNumber"/>-->
-<!--            </div>-->
-<!--        </div>-->
         <div style="text-align:justify;">
 
             &nbsp; &nbsp;&nbsp; <b>Numero de Tarjeta</b> <input type="text" name="cardNumber" placeholder="Número de la tarjeta" id="form-checkout__cardNumber"/> <br><br>
@@ -31,41 +25,20 @@
             &nbsp; &nbsp; &nbsp;<b>Codigo de seguridad </b><input type="text" name="securityCode" placeholder="Código de seguridad" id="form-checkout__securityCode"/><br><br>
             &nbsp; &nbsp; &nbsp;<b>Banco emisor de la tarjeta </b>
             <select name="issuer" placeholder="Banco emisor" id="form-checkout__issuer">
-                <option value="selected" selected> Seleccionar</option>
-                <option value="value5">Banco HCBC</option>
-                <option value="value1">Banco Frances</option>
-                <option value="value2">Banco Santander</option>
-                <option value="value3">Banco Galicia</option>
-                <option value="value4">Banco Itau</option>
-                <option value="value5">Banco HCBC</option>
-                <option value="value6">Banco Patagonia</option>
-                <option value="value7">Banco Ciudad</option>
             </select><br><br>
             &nbsp; &nbsp; &nbsp;<b>Tipo de documento </b>
             <select name="identificationType" placeholder="Tipo de documento" id="form-checkout__identificationType">
-                <option value="selected" selected> Seleccionar</option>
-                <option value="value1">DNI</option>
-                <option value="value2">LC</option>
-                <option value="value3">LE</option>
-                <option value="value4">CI</option>
             </select><br><br>
             &nbsp; &nbsp; &nbsp;<b>Numero de documento </b><input type="text" name="identificationNumber" placeholder="Número de documento" id="form-checkout__identificationNumber"/><br><br>
             &nbsp; &nbsp; &nbsp;<b>Cantidad de cuotas </b>
             <select name="installments" placeholder="Cuotas" id="form-checkout__installments">
-                <option value="selected" selected> Seleccionar</option>
-                <option value="value1">1</option>
-                <option value="value2">3</option>
-                <option value="value3">6</option>
-                <option value="value4">9</option>
-                <option value="value5">12</option>
             </select><br><br>
-<!--            <a href="congrats.html" class="btn btn-primary btn-lg" id="checkout-btn" style="position: fixed; margin-left: 20px;" href="cardform.html">Pagar</a>-->
-<!--            &nbsp; &nbsp; &nbsp;<button class="btn btn-primary btn-sm"  text-align="left" width="20%" type="submit" id="form-checkout__submit">Pagar</button><br><br>-->
-            &nbsp; &nbsp; &nbsp;<a class="btn btn-primary btn-sm"  text-align="left" width="20%" type="submit" id="form-checkout__submit" href="http://localhost:8080/success">Pagar</a><br><br>
-<!--            &nbsp; &nbsp; &nbsp; <progress value="0" class="progress-bar">Cargando...</progress>-->
+            &nbsp; &nbsp;   <button class="btn btn-primary btn-sm" type="submit" id="form-checkout__submit">Pagar</button>
+            &nbsp; &nbsp; &nbsp; <progress value="0" class="progress-bar">Cargando...</progress>
         </div>
     </form>
 </font>
+<script type="text/javascript" src="cardform.js" defer></script>
 </body>
 <footer>
     <img id="horizontal_logo"
