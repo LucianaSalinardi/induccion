@@ -1,4 +1,4 @@
-function updatePrice() {
+   function updatePrice() {
   let quantity = document.getElementById("quantity").value;
   let unitPrice = document.getElementById("unit-price").innerHTML;
   let amount = parseInt(unitPrice) * parseInt(quantity);
@@ -11,3 +11,7 @@ function updatePrice() {
 document.getElementById("quantity").addEventListener("change", updatePrice);
 updatePrice();
 
+function payButtonClick(){
+  let quantity = document.getElementById("quantity").value;
+  window.location.href="http://localhost:8080/cardForm?quantity=" + quantity;
+}

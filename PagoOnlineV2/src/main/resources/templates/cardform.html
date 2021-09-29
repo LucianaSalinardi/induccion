@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no, shrink-to-fit=no"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+
+    <title>Card Form</title>
+</head>
+<body style="background-color:#f8f9fa">
+<font color="navy" style="font-family:times;">
+    <h1>Formulario de tarjeta</h1><br><br>
+    <style> h1 {text-align:center;}</style>
+    <form id="form-checkout">
+
+        <div style="text-align:justify;">
+
+            &nbsp; &nbsp;&nbsp; <b>Numero de Tarjeta</b> <input type="text" name="cardNumber" placeholder="Número de la tarjeta" id="form-checkout__cardNumber"/> <br><br>
+            &nbsp; &nbsp; &nbsp;<b>Mes de expiracion </b><input type="text" name="cardExpirationMonth" placeholder="Mes de vencimiento" id="form-checkout__cardExpirationMonth"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Año de expiracion </b><input type="text" name="cardExpirationYear" placeholder="Año de vencimiento" id="form-checkout__cardExpirationYear"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Nombre del titular de la tarjeta </b><input type="text" name="cardholderName" placeholder="Titular de la tarjeta" id="form-checkout__cardholderName"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>E-mail del titular </b><input type="email" name="cardholderEmail" placeholder="E-mail" id="form-checkout__cardholderEmail"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Codigo de seguridad </b><input type="text" name="securityCode" placeholder="Código de seguridad" id="form-checkout__securityCode"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Banco emisor de la tarjeta </b>
+            <select name="issuer" placeholder="Banco emisor" id="form-checkout__issuer">
+            </select><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Tipo de documento </b>
+            <select name="identificationType" placeholder="Tipo de documento" id="form-checkout__identificationType">
+            </select><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Numero de documento </b><input type="text" name="identificationNumber" placeholder="Número de documento" id="form-checkout__identificationNumber"/><br><br>
+            &nbsp; &nbsp; &nbsp;<b>Cantidad de cuotas </b>
+            <select name="installments" placeholder="Cuotas" id="form-checkout__installments">
+            </select><br><br>
+            &nbsp; &nbsp;   <button class="btn btn-primary btn-sm" type="submit" id="form-checkout__submit">Pagar</button>
+            &nbsp; &nbsp; &nbsp; <progress value="0" class="progress-bar">Cargando...</progress>
+        </div>
+    </form>
+</font>
+<script type="text/javascript" src="cardform.js" defer></script>
+</body>
+<footer>
+    <img id="horizontal_logo"
+         src="https://d2az8otjr0j19j.cloudfront.net/templates/092/381/twig/static/images/logo-mercadopago.png?904813644"
+         text-align="right" width="400" height="100" style="position: fixed; margin: -100px; right: 150px; bottom: 90px;">
+    <div style="position: fixed; margin: 30px; left: -10px; bottom:-40px">
+        <p> Sitio para developers</p>
+        <p><a href="https://developers.mercadopago.com">https://developers.mercadopago.com </a>
+    </div>
+</footer>
+</html>
