@@ -11,3 +11,7 @@
 document.getElementById("quantity").addEventListener("change", updatePrice);
 updatePrice();
 
+function payButtonClick(){
+  let quantity = document.getElementById("quantity").value;
+  window.location.href="http://localhost:8080/cardForm?quantity=" + quantity;
+}

@@ -4,12 +4,15 @@ package mercadopago.PagoOnlineV2.dtos.request;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.mercadopago.resources.Payment;
+import com.mercadopago.resources.datastructures.payment.Item;
 import com.mercadopago.resources.datastructures.payment.Payer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.validation.annotation.Validated;
+
+import java.util.List;
 
 
 @Validated
@@ -18,7 +21,7 @@ import org.springframework.validation.annotation.Validated;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PaymentReqDto  {
+public class PaymentReqDto {
 
 
     private String payment_method_id;
@@ -28,8 +31,7 @@ public class PaymentReqDto  {
     private Integer installments;
     private Payer payer;
     private String description;
-    private Payment.Status status;
-
+    private String status;
 
 
 

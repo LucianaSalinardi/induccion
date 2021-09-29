@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
-
-
 @Controller
 public class PaymentController {
 
@@ -32,7 +30,7 @@ public class PaymentController {
         model.addAttribute("category", preference.getItems().get(0).getCategoryId());
         model.addAttribute("unitPrice", preference.getItems().get(0).getUnitPrice());
 
-        return "pref";
+        return "preference";
     }
 
     @GetMapping(value = "/cardForm", produces = "text/html")
@@ -42,7 +40,7 @@ public class PaymentController {
     }
 
     @PostMapping(path = "/process_payment")
-    public ResponseEntity<Payment> createPayment(@RequestBody  PaymentReqDto paymentReqDto) throws MPException {
+    public ResponseEntity<Payment> createPayment(@RequestBody PaymentReqDto paymentReqDto) throws MPException {
 
         return new ResponseEntity<>(myTechService.createPayment(paymentReqDto), HttpStatus.CREATED);
     }
@@ -50,14 +48,10 @@ public class PaymentController {
 
     @GetMapping(value = "/success", produces = "text/html")
     public String congrats(Model model) throws MPException {
-//        Preference preference = myTechService.getPreference();
-//        model.addAttribute("description", preference.getItems().get(0).getDescription());
-//        model.addAttribute("totalPrice", (preference.getItems().get(0).getUnitPrice()) * (preference.getItems().get(0).getQuantity()));
-        Payment payment=myTechService.getPayment();
-        model.addAttribute("price",payment.getTransactionAmount());
-        model.addAttribute("description",payment.getDescription());
-        model.addAttribute("status",payment.getStatus());
-
+        Payment payment = myTechService.getPayment();
+        model.addAttribute("price", payment.getTransactionAmount());
+        model.addAttribute("description", payment.getDescription());
+        model.addAttribute("status", payment.getStatus());
         return "congrats";
 
     }

@@ -73,7 +73,7 @@ const cardForm = mp.cardForm({
           token,
           issuer_id,
           payment_method_id,
-          transaction_amount: Number(amount),
+          transaction_amount: totalAmount,
           installments: Number(installments),
           description: "Descripción del producto",
           payer: {
@@ -93,7 +93,7 @@ const cardForm = mp.cardForm({
       }
       }).then((json)=>{
       console.log(json);
-      window.location.href = "http://localhost:8080/success";
+      window.location.href = "http://localhost:8080/success?quantity=" + quantity;
       });
     },
     onFetching: (resource) => {
@@ -108,5 +108,12 @@ const cardForm = mp.cardForm({
       };
     },
   },
+
 });
+
+ const params = new URLSearchParams(window.location.search)
+      let amount= "75000";
+      let quantity=params.get('quantity')
+      let totalAmount = amount * quantity;
+      console.log(totalAmount);
 
