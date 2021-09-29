@@ -1,4 +1,4 @@
-   function updatePrice() {
+function updatePrice() {
   let quantity = document.getElementById("quantity").value;
   let unitPrice = document.getElementById("unit-price").innerHTML;
   let amount = parseInt(unitPrice) * parseInt(quantity);
